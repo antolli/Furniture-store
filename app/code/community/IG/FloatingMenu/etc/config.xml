@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_FloatingMenu
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+-->
+<config>
+	<modules>
+		<IG_FloatingMenu>
+			<version>1.0.0</version>
+		</IG_FloatingMenu>
+	</modules>
+	<global>
+		<helpers>
+			<ig_floatingmenu>
+				<class>IG_FloatingMenu_Helper</class>
+			</ig_floatingmenu>
+		</helpers>
+		<blocks>
+			<ig_floatingmenu>
+				<class>IG_FloatingMenu_Block</class>
+			</ig_floatingmenu>
+		</blocks>
+	</global>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<ig_floatingmenu module="IG_FloatingMenu">
+					<file>ig_floatingmenu.xml</file>
+				</ig_floatingmenu>
+			</updates>
+		</layout>
+	</frontend>
+	
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ig_floatingmenu translate="title" module="ig_floatingmenu">
+											<title>IG FloatingMenu</title>
+											<sort_order>50</sort_order>
+										</ig_floatingmenu>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+	
+	<default>
+		<ig_floatingmenu>
+			<general>
+				<enabled>1</enabled>
+			</general>
+		</ig_floatingmenu>
+	</default>
+</config>

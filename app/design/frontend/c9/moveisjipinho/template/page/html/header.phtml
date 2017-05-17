@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<div class="header-container">
+<div class="barraTopo">
+
+	<div class="login-top">
+		<div class="interna_Aux">
+                    <div class="login-cadastro">
+                        Fa&ccedil;a <span class="login_link"><a href="<?php echo Mage::getUrl("customer/account/login");?>">Login</a></span>
+			ou <span class="cadastro_link"><a href="<?php echo Mage::getUrl("customer/account/create") ?>">Cadastre-se</a></span>
+                    </div>
+                    <div class="facebook-login">
+                    <?php echo $this->getChildHtml('topLinks') ?>
+                    </div>
+                    <div class="links-top">
+                    <a  href="javascript:;"><img style="margin-top: 6px;" src="<?php echo $this->getSkinUrl();?>images/imgBalao.png"/> atendimento ONLINE</a>
+                    <a  href="<?php echo $this->getBaseUrl(); ?>customer/account"><img style="margin-top: 6px;" src="<?php echo $this->getSkinUrl();?>images/imgPessoa.png"/><strong> Minha </strong>Conta</a>
+                    <a  href="<?php echo $this->getBaseUrl()?>wishlist"><img style="margin-top: 6px;" src="<?php echo $this->getSkinUrl();?>images/imgEstrela.png"/><strong> Lista </strong>de Desejos</a>
+                    <a  href="<?php echo $this->getBaseUrl(); ?>sales/order/history"><img style="margin-top: 6px;" src="<?php echo $this->getSkinUrl();?>images/imgCarrinho.png"/><strong> Meus </strong>Pedidos</a>
+                    </div>
+		</div>
+</div>
+</div>
+    <div class="header">	
+        <?php if ($this->getIsHomePage()):?>
+        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+        <div class="quick-access">
+		<div class="infos_top">
+			<img style="margin-top: -4px;" src="<?php echo $this->getSkinUrl();?>images/topinho.png"/>
+		</div>
+		<div class="televendas">
+		<?php
+					$helper = Mage::helper('checkout');
+					$totalQuantity = Mage::getSingleton('checkout/cart')->getItemsCount();
+					$grandTotal = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+					$Total = $helper->formatPrice($grandTotal); 
+				?>
+			<span class="total-itens"><?php echo $totalQuantity; ?> itens</span>
+		</div>
+            		<div class="buscaTop" >
+            <?php echo $this->getChildHtml('topSearch') ?>
+		</div>
+            <?php //echo $this->getChildHtml('store_language') ?>
+        </div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    </div>
+
+<?php echo $this->getChildHtml('topMenu') ?>

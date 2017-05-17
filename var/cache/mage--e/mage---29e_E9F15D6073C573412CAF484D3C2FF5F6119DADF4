@@ -1,0 +1,66 @@
+<div class="footer-container">
+     <div class="mascote">
+            <img src="http://www.moveisjipinho.com.br/skin/frontend/c9/moveisjipinho/images/mascote-jipinho.png" alt="" />
+        </div>
+    <div class="footer">
+        <table cellspacing="2">
+            <tr>
+                <td>
+                    <h2>Institucional</h2>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h2>Cliente</h2>
+                    <ul>
+                        <li><a href="#">D&uacute;vidas Frequentes</a></li>
+                        <li><a href="#">Prazo</a></li>
+                        <li><a href="#">Termos de Devolu&ccedil;&atilde;o</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h2>Seguran&ccedil;a</h2>
+                    <img src="http://www.moveisjipinho.com.br/skin/frontend/c9/moveisjipinho/images/seguranca.png" alt="" />
+                </td>
+                <td class="ultima">
+                    <h2>Facebook</h2>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id))
+                                return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=394801140622228";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                   </script>
+                   <div class="fb-like-box" data-href="https://www.facebook.com/MoveisJipinho" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                </td>
+            </tr>         
+        </table>
+        <table cellspacing="2" class="footer-metodos">
+            <tr>
+                <td>
+                    <h2>Formas de Pagamento</h2>
+                    <img src="http://www.moveisjipinho.com.br/skin/frontend/c9/moveisjipinho/images/pagamentos.png" alt="formas-pagamento" />
+                </td>
+                <td>
+                    <h2>Formas de Envio</h2>
+                    <img src="http://www.moveisjipinho.com.br/skin/frontend/c9/moveisjipinho/images/envios.png" alt="formas-envio" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="logo-c9">
+        <img src="http://www.moveisjipinho.com.br/skin/frontend/c9/moveisjipinho/images/logo-c9.png" alt="" />
+    </div>
+</div>
+<div class="footer-baixo">
+    <p>Moveis Jipinho. Todos direitos reservados</p>
+    <span>D&uacute;vidas (41) 3678-1258 | contato@moveisjipinho.com.br</span>
+</div>

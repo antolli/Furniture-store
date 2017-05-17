@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+    <name>Moo_CloudZoom</name>
+    <version>1.1.4</version>
+    <stability>beta</stability>
+    <license uri="http://jamandcheese-on-phptoast.com/code-license">New BSD License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension replaces the image gallery with the cloudZoom widget.</summary>
+    <description>For this extension, the regular image gallery of Magento will be replaced by the cloudZoom widget. This enables customers to hover over product images and bring up a zoom view, instead of using controls.
+
+Features:
+
+Smooth zoom movement.
+Define the dimensions of the zoom window.
+Define the position of the zoom window.
+Z/Y pixel spaces for the zoom window.
+Show or Hide the title on top of the zoom window. Also, define the opacity.
+Define lens opacity.
+Dimensions of the main image.
+Soft focus and inner zoom features.
+Overlay color and opacity on hover.
+To Configure it you can navigate to "System &gt; Configuration &gt; Catalog &gt; Moo Product Gallery "CloudZoom"</description>
+    <notes>Release 1.1.4</notes>
+    <authors><author><name>mohammed</name><user>auto-converted</user><email>mohamed.alsharaf@gmail.com</email></author></authors>
+    <date>2011-04-25</date>
+    <time>00:48:57</time>
+    <contents><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="cloud-zoom.css" hash="f8441f96bfff24b718197817e5d70883"/></dir><dir name="js"><file name="cloud-zoom.1.0.2.min.js" hash="e099e5d3d056c1c1063aa0afd7065679"/><file name="jquery.js" hash="10092eee563dec2dca82b77d2cf5a1ae"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="moo_cloudzoom.xml" hash="6455d64d40f14e0021e501b5e069c7ef"/></dir><dir name="template"><dir name="moo"><dir name="catalog"><dir name="product"><dir name="view"><file name="media.phtml" hash="37d176c906f978d9b9127351c96feede"/></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Moo_Catalog.xml" hash="7e8911b4eee9ea250d37eece71397548"/></dir></target><target name="magecommunity"><dir name="Moo"><dir name="Catalog"><dir name="Block"><dir name="Product"><dir name="View"><file name="Media.php" hash="a289aaad25f0a02d2b2774471e462ad7"/></dir></dir></dir><dir name="etc"><file name="config.xml" hash="95b58a49f1b0f12c566cd83d620f4b48"/><file name="system.xml" hash="5ca5181c0fb8a98b3071f87084d30f50"/></dir><dir name="Helper"><file name="Data.php" hash="db4d7e3d14e325fcf8d80fc7e11fec0b"/></dir><dir name="Model"><dir name="Gallery"><dir name="CloudZoom"><file name="OpacityRange.php" hash="41c61c12b778f1ce8e66db9c6fc32dfc"/><file name="Position.php" hash="9076a8db83112b22ca08059b956f499f"/><file name="SmoothMove.php" hash="b375f1b9a44107fa87165ce089cb9d67"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

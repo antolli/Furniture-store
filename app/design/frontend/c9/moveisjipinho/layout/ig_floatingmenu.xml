@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_FloatingMenu
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+-->
+<layout version="0.1.0">
+	<default>
+		<reference name="head" ifconfig="ig_floatingmenu/general/enabled">
+			<action method="addItem"><type>skin_js</type><name>ig_floatingmenu/floatingmenu.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>ig_floatingmenu/floatingmenu.css</name></action>
+		</reference>
+		
+		<reference name="before_body_end" ifconfig="ig_floatingmenu/general/enabled">
+			<block type="ig_floatingmenu/floating" name="floating.menu" as="floatingMenu" translate="label" template="ig_floatingmenu/floating.phtml">
+				<!--block type="catalog/navigation" name="floating.top.menu" as="floatingTopMenu" template="ig_floatingmenu/navigation.phtml"/-->
+				<block type="checkout/cart_sidebar" name="cart_sidebar"  template="checkout/cart/sidebar.phtml" >
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+                    <label>Shopping Cart Sidebar Extra Actions</label>
+                </block>
+            </block>
+			</block>
+		</reference>
+	</default>
+</layout>

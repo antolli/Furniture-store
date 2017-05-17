@@ -1,0 +1,105 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$_helper = $this->helper('catalog/output');
+?>
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+<?php if(count($this->getItemCollection()->getItems())): ?>
+<div class="box-collateral box-up-sell">
+    <h2 class="title-relacionados"><?php echo $this->__('You may also be interested in the following product(s)') ?></h2>
+   <ul class="products-grid">
+    <?php // $this->setColumnCount(5); // uncomment this line if you want to have another number of columns. also can be changed in layout ?>
+    <?php $this->resetItemsIterator() ?>
+    <?php for($_i=0;$_i<$this->getRowCount();$_i++): ?>
+        <?php for($_j=0;$_j<$this->getColumnCount();$_j++): ?>
+            <?php if($_link=$this->getIterableItem()): ?>
+            <li style="cursor:pointer;" onclick="window.location = '<?php echo $_link->getProductUrl() ?>';" class="item">
+
+                            <?php
+                            $day = date('Y-m-d');
+                            $from = $_link->getData('news_from_date');
+                            $to = $_link->getData('news_to_date');
+                            if ($day >= $from && $day <= $to):
+                                ?>
+                                <img class="rot_novo" src="<?php echo $this->getSkinUrl(); ?>images/rot_novidade.png"/>
+                            <?php endif; ?>
+                            <?php if ($_link->getData('fretegratis')): ?>
+                                <img class="rot_fg" src="<?php echo $this->getSkinUrl(); ?>images/rot_fretegratis.png"/>
+                            <?php endif; ?>
+                            <?php if ($_link->getData('promocao')): ?>
+                                <img class="rot_promo" src="<?php echo $this->getSkinUrl(); ?>images/rot_promocao.png"/>
+                            <?php endif; ?>
+                            <?php if($_link->getData('special_price')):?>
+                                        <?php if($_link->getData('special_to_date')):?>
+                                            <?php if($_link->getData('special_from_date') <= date('Y-m-d') && $_link->getData('special_to_date') >= date('Y-m-d')):?>
+                                                <?php 
+                                                $desconto = round(($_link->getData('price') - $_link->getData('special_price')) * 100/ $_link->getData('price'));
+                                                ?>
+                                                <div class="rot_desconto">
+                                                    - <?php echo $desconto ?>
+                                                </div>
+                                            <?php else:?>                                             
+                                            <?php endif;?>
+                                        <?php else:?>
+                                                <?php 
+                                                $desconto = round(($_link->getData('price') - $_link->getData('special_price')) * 100/ $_link->getData('price'));
+                                                ?>
+                                                <div class="rot_desconto">
+                                                - <?php echo $desconto;?>
+                                                </div>
+                                         <?php endif;?>
+                           <?php else:?>            
+                           <?php endif;?>
+                            <a href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_link, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(200); ?>" width="200" height="200" alt="<?php echo $this->stripTags($this->getImageLabel($_link, 'small_image'), null, true) ?>" /></a>
+                            <h2 class="product-name"><a href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->stripTags($_link->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_link, $_link->getName(), 'name') ?></a></h2>
+                            <?php if ($_link->getRatingSummary()): ?>
+                    <?php echo $this->getReviewsSummaryHtml($_link, 'short') ?>
+                <?php endif; ?>
+                            <div class="fu_price">Por <span><?php echo Mage::helper('core')->currency($_link->getPrice(), true, false); ?></span></div>
+                            <div class="par_price">em at&eacute; <span> 12X </span> de <span><?php echo Mage::helper('core')->currency($_link->getFinalPrice() / 12, true, false); ?></span></div>
+
+
+                            <div class="actions">
+                                <?php if ($_link->isSaleable()): ?>
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_link) ?>')"><span></span></button>
+                                <?php else: ?>
+                                    <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                    <?php endif; ?>
+                                <ul class="add-to-links">
+                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                        <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_link) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        </li>
+            <?php else: ?>
+            <?php endif; ?>
+        <?php endfor; ?>
+    <?php endfor; ?>
+    </ul>
+    <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd', 'even', 'first', 'last'])</script>
+</div>
+<?php endif ?>

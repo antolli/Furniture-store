@@ -1,0 +1,17 @@
+<?php $parameters = $this->getParameters(); ?>
+<script type="text/javascript">
+   window.onload = function() {
+       document.getElementById('pay').submit() 
+   }
+</script>
+<p style="text-align: center;font-style: italic;"><img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif'); ?>"/><?php echo $this->__('txt.MsgPagSegGratis2') ?></p>
+<form target="_self" id="pay" name="pay" target="pagseguro" method="post"
+      action="https://pagseguro.uol.com.br/v2/checkout/payment.html" onsubmit="ipagare.openPopup">
+    <?php
+        foreach ($parameters as $key => $value) {
+            ?>
+            <input type="hidden" name="<?php echo $key ?>" value="<?php echo $value ?>"/>
+            <?php
+        }
+        ?>
+</form>

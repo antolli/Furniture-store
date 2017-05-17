@@ -1,0 +1,18 @@
+/********************** Tabs */
+.product-view .tabs { margin: 15px 0px; overflow:hidden; border-bottom:1px solid #a9a9a9;  zoom: 1;}
+.product-view .tabs li                { float:left; font-size:18px; text-transform: uppercase; line-height:1em; }
+.product-view .tabs li.first          { border-left:0; }
+.product-view .tabs li.last           { border-right:0; }
+.product-view .tabs a                 { display:block; padding:6px 10px; color:#444; text-decoration: none; }
+.product-view .tabs a:hover           { text-decoration:none; color:#444; ; text-decoration: none;}
+.product-view .tabs li.active a,
+.product-view .tabs li.active a:hover { font-weight:bold; color:#333; border-bottom: 3px solid #a9a9a9; }
+
+#product_tabs_tags_tabbed_contents.input-box input	{ width: 300px; }
+#product_tabs_tags_tabbed_contents .input-box	{ width: 300px; float:left; margin-right: 10px;}
+#product_tabs_related_tabbed_contents li	{ float:left; margin-right: 10px;}
+#product_tabs_related_tabbed_contents ol	{ clear: both;}
+.product-collateral:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; zoom: 1}
+.padder{
+    font-size: 15px;
+}

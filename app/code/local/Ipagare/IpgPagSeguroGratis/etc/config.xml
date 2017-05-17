@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ipagare_IpgPagSeguroGratis>
+            <version>1.0.0</version>
+        </Ipagare_IpgPagSeguroGratis>
+    </modules>
+
+    <global>
+        <models>
+            <ipgpagsegurogratis>
+                <class>Ipagare_IpgPagSeguroGratis_Model</class>
+                <resourceModel>ipgpagsegurogratis_mysql4</resourceModel>
+            </ipgpagsegurogratis>
+            <ipgpagsegurogratis_mysql4>
+                <class>Ipagare_IpgPagSeguroGratis_Model_Mysql4</class>
+                <entities>
+                    <entity_payment>
+                        <table>ipagare_pagseguro_gratis_pagamento</table>
+                    </entity_payment>
+                </entities>
+            </ipgpagsegurogratis_mysql4>
+        </models>
+
+        <helpers>
+            <ipgpagsegurogratis>
+                <class>Ipagare_IpgPagSeguroGratis_Helper</class>
+            </ipgpagsegurogratis>
+        </helpers>
+
+        <blocks>
+            <ipgpagsegurogratis>
+                <class>Ipagare_IpgPagSeguroGratis_Block</class>
+            </ipgpagsegurogratis>
+        </blocks>
+        
+        <resources>
+            <ipgpagsegurogratis_setup>
+                <setup>
+                    <module>Ipagare_IpgPagSeguroGratis</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ipgpagsegurogratis_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <secure_url>
+            <ipgpagsegurogratis>/ipgpagsegurogratis</ipgpagsegurogratis>
+        </secure_url>
+        <routers>
+            <ipgpagsegurogratis>
+                <use>standard</use>
+                <args>
+                    <module>Ipagare_IpgPagSeguroGratis</module>
+                    <frontName>ipgpagsegurogratis</frontName>
+                    <modules>
+                        <Ipagare_IpgPagSeguroGratis before="Mage_Checkout">Ipagare_IpgPagSeguroGratis</Ipagare_IpgPagSeguroGratis>
+                    </modules>
+                </args>
+            </ipgpagsegurogratis>
+        </routers>
+        <layout>
+            <updates>
+                <ipgpagsegurogratis>
+                    <file>ipagare/ipgpagsegurogratis.xml</file>
+                </ipgpagsegurogratis>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Ipagare_IpgPagSeguroGratis>
+                    <files>
+                        <default>Ipagare_IpgPagSeguroGratis.csv</default>
+                    </files>
+                </Ipagare_IpgPagSeguroGratis>
+            </modules>
+        </translate>
+    </frontend>
+    
+    <admin>
+        <routers>
+            <ipgpagsegurogratis>
+                <use>admin</use>
+                <args>
+                    <module>Ipagare_IpgPagSeguroGratis</module>
+                    <frontName>ipgpagsegurogratis</frontName>
+                </args>
+            </ipgpagsegurogratis>
+        </routers>
+    </admin>
+    
+    <adminhtml>
+        <layout>
+            <updates>
+                <ipgpagsegurogratis module='ipgpagsegurogratis'>
+                    <file>ipagare/ipgpagsegurogratis.xml</file>
+                </ipgpagsegurogratis>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <default>
+        <payment>
+            <ipgpagsegurogratis>
+                <active>1</active>
+                <model>ipgpagsegurogratis/IpgPagSeguroGratis</model>
+                <title>Pagamento Online com PagSeguro</title>
+                <allowspecific>0</allowspecific>
+            </ipgpagsegurogratis>
+        </payment>
+        <ipgpagsegurogratis>
+            <geral>
+                <valor_minimo>0.01</valor_minimo>
+            </geral>
+        </ipgpagsegurogratis>
+    </default>
+   
+</config>

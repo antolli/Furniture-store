@@ -1,0 +1,1 @@
+if(typeof ipagareGratis=="undefined"||!ipagareGratis){var ipagareGratis={}}if(typeof DataGratis=="undefined"||!DataGratis){var DataGratis={}}if(typeof MoedaGratis=="undefined"||!MoedaGratis){var MoedaGratis={}};

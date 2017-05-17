@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <ipagare_gratis translate="label" module="ipgbasegratis">
+            <label>iPAGARE Grátis</label>
+            <sort_order>1001</sort_order>
+        </ipagare_gratis>
+    </tabs>
+    
+    <sections>
+        <ipgbasegratis>
+            <label><![CDATA[Configurações Gerais]]></label>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>ipagare_gratis</tab>
+            <groups>
+                <pagina_sucesso translate="label comment">
+                    <label><![CDATA[Página de sucesso]]> (1.0.0)</label>
+                    <comment>
+                        <![CDATA[
+                            <p>Na página de sucesso, algumas informações não são visualizadas quando um pedido é realizado com usuário não autenticado.</p>
+                            <p>Caso queira exibir as informações do pagamento na tela sucesso ative essa configuração.</p>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <mostrar_conteudo translate="label">
+                            <label><![CDATA[Mostrar conteúdo na página de sucesso]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mostrar_conteudo>
+                    </fields>
+                </pagina_sucesso>
+                <osc translate="label comment">
+                    <label><![CDATA[OneStepCheckout]]> (1.0.0)</label>
+                    <comment>
+                        <![CDATA[<p>Essa opção possibilita aplicar um estilo mais legível aos campos do Onestepcheckout.</p>
+                        <p>* Válido apenas para clientes que possuem o Onestepcheckout contratado.</p>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <css_active translate="label">
+                            <label><![CDATA[Habilitar estilo no checkout]]></label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </css_active>
+                    </fields>
+                </osc>
+            </groups>
+        </ipgbasegratis>
+    </sections>
+</config>

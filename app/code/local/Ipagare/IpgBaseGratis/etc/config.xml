@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ipagare_IpgBaseGratis>
+            <version>1.0.0</version>
+        </Ipagare_IpgBaseGratis>
+    </modules>
+    
+    <global>
+        <models>
+            <ipgbasegratis>
+                <class>Ipagare_IpgBaseGratis_Model</class>
+            </ipgbasegratis>
+        </models>
+        
+        <blocks>
+            <ipgbasegratis>
+                <class>Ipagare_IpgBaseGratis_Block</class>
+            </ipgbasegratis>
+        </blocks>
+        
+        <helpers>
+            <ipgbasegratis>
+                <class>Ipagare_IpgBaseGratis_Helper</class>
+            </ipgbasegratis>
+        </helpers>
+        
+        <resources>
+            <ipgbasegratis_setup>
+                <setup>
+                    <module>Ipagare_IpgBaseGratis</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ipgbasegratis_setup>
+        </resources>
+    </global>
+    
+    <admin>
+        <!--
+        <secure_url>
+            <Ipagare_IpgBaseGratis>/ipgbasegratis</Ipagare_IpgBaseGratis>
+        </secure_url>
+        -->
+        <routers>
+            <ipgbasegratis>
+                <use>admin</use>
+                <args>
+                    <module>Ipagare_IpgBaseGratis</module>
+                    <frontName>ipgbasegratis</frontName>
+                </args>
+            </ipgbasegratis>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <ipgbasegratis module='ipgbasegratis'>
+                    <file>ipagare/ipgbasegratis.xml</file>
+                </ipgbasegratis>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <frontend>
+        <layout>
+            <updates>
+                <ipgbasegratis module='ipgbasegratis'>
+                    <file>ipagare/ipgbasegratis.xml</file>
+                </ipgbasegratis>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Ipagare_IpgBaseGratis>
+                    <files>
+                        <default>Ipagare_IpgBaseGratis.csv</default>
+                    </files>
+                </Ipagare_IpgBaseGratis>
+            </modules>
+        </translate>
+    </frontend>
+
+    <default>
+        <ipgbasegratis>
+            <pagina_sucesso>
+                <mostrar_conteudo>1</mostrar_conteudo>
+            </pagina_sucesso>
+            <osc>
+                <css_active>1</css_active>
+            </osc>        
+        </ipgbasegratis>
+        
+        
+    </default>
+</config>

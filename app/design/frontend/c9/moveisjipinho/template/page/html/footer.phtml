@@ -1,0 +1,92 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="footer-container">
+     <div class="mascote">
+            <img src="<?php echo $this->getSkinUrl('images/mascote-jipinho.png');?>" alt="" />
+        </div>
+    <div class="footer">
+        <table cellspacing="2">
+            <tr>
+                <td>
+                    <h2>Institucional</h2>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h2>Cliente</h2>
+                    <ul>
+                        <li><a href="#">D&uacute;vidas Frequentes</a></li>
+                        <li><a href="#">Prazo</a></li>
+                        <li><a href="#">Termos de Devolu&ccedil;&atilde;o</a></li>
+                    </ul>
+                </td>
+                <td>
+                    <h2>Seguran&ccedil;a</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/seguranca.png'); ?>" alt="" />
+                </td>
+                <td class="ultima">
+                    <h2>Facebook</h2>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id))
+                                return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=394801140622228";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                   </script>
+                   <div class="fb-like-box" data-href="https://www.facebook.com/MoveisJipinho" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                </td>
+            </tr>         
+        </table>
+        <table cellspacing="2" class="footer-metodos">
+            <tr>
+                <td>
+                    <h2>Formas de Pagamento</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/pagamentos.png');?>" alt="formas-pagamento" />
+                </td>
+                <td>
+                    <h2>Formas de Envio</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/envios.png');?>" alt="formas-envio" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="logo-c9">
+        <img src="<?php echo $this->getSkinUrl('images/logo-c9.png');?>" alt="" />
+    </div>
+</div>
+<div class="footer-baixo">
+    <p>Moveis Jipinho. Todos direitos reservados</p>
+    <span>D&uacute;vidas (41) 3678-1258 | contato@moveisjipinho.com.br</span>
+</div>

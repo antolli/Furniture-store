@@ -1,0 +1,120 @@
+/**
+ * IDEALIAGroup srl
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.idealiagroup.com/magento-ext-license.html
+ *
+ * @category   IG
+ * @package    IG_FloatingMenu
+ * @copyright  Copyright (c) 2011-2012 IDEALIAGroup srl (http://www.idealiagroup.com)
+ * @license    http://www.idealiagroup.com/magento-ext-license.html
+ */
+
+#ig-floatingmenu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #127794;
+    display: none;	
+}
+
+#ig-floatingmenu-container {
+    width: 100%;
+    padding: 5px;
+    height: 57px;
+}
+
+#ig-floatingmenu-container #nav {
+    width: 960px;
+    padding: 0;
+}
+
+#ig-floatingmenu-container .quick-access {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#ig-floatingmenu-container .welcome-msg {
+    float: left;
+    margin-right: 2em;
+}
+#ig-floatingmenu-container .links {
+    float: left;
+}
+
+#ig-floatingmenu-container .form-search {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: auto;
+    margin: 0;
+    position: relative;
+    right: 0;
+    top: 5px;
+}
+
+#ig-floatingmenu-container .ig-floatingmenu-wrapper {
+    width: 1015px;
+    margin: auto;
+}
+
+#ig-floatingmenu-search {
+
+}
+.coisas-menu{
+    width: 1015px;
+    height: 57px;
+}
+.logo-fixed{
+    float: left;
+
+}
+.atendimento{
+    float: left;
+    margin: 13px 0 0 32px;
+}
+#ig-floatingmenu-search .input-text{
+    width: 300px;
+    background: url("../images/lupaBusca.png") no-repeat scroll 5px center #fff;
+    border: medium none;
+    color: #808080;
+    float: left;
+    font-size: 10pt;
+    letter-spacing: 1.2px;
+    margin-left: 1px;
+    margin-right: 4px;
+    margin-top: 1px;
+    padding: 5px 5px 5px 40px;
+}
+#ig-floatingmenu-search .form-search{
+    width: 450px;
+    margin-top: 10px;
+    margin-left: 50px;
+    outline:2px solid #28459d;
+    border:2px solid #CECECE;
+    background: #fff;
+}
+.coisas-menu .div-carrinho{
+    background: url('../images/cart_float.png') no-repeat;
+    float: right;
+    height: 69px;
+    margin-left: 50px;
+    position: relative;
+    top: -49px;
+    width: 214px;
+}
+.coisas-menu .div-carrinho .itens-cart{
+    color: #FFB000;
+    font-size: 12pt;
+    width:100px;
+    margin-left: 90px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    top: 38px;
+}
